@@ -1,169 +1,94 @@
-# 🤖 CodeForgeAI
+# 🚀 CodeForgeAI
 
-An AI-powered coding assistant built using Large Language Models (LLMs) and an agent-based architecture.
+CodeForgeAI is an AI-powered coding assistant built with Python. It provides a clean desktop interface where developers can chat with an AI, ask programming questions, and upload source code files to receive explanations.
 
-CodeForgeAI can understand developer instructions, reason about tasks, and interact with project files using custom tools. It demonstrates how AI agents can automate software development workflows through tool calling and structured execution.
-
----
-
-# ✨ Features
-
-## 🧠 AI Agent System
-
-* Agent-based workflow for completing coding tasks
-* Interprets user instructions and decides required actions
-* Uses an iterative reasoning and execution loop
-* Handles tasks through structured tool calls
+This project combines a modern AI workflow with function calling, making it more than just a chatbot—it acts as an intelligent coding assistant.
 
 ---
 
-## 📂 File Operations
+## ✨ Features
 
-CodeForgeAI can interact with files through dedicated tools:
-
-* Create new files
-* Read existing files
-* Modify file contents
-* Generate code based on requirements
-
----
-
-## 🔧 Tool Calling Architecture
-
-* Custom tools designed with structured schemas
-* Agent dynamically selects required tools
-* Modular design allowing new capabilities to be added easily
+- 💬 AI-powered coding assistant
+- 🖥️ Simple desktop GUI built with Tkinter
+- 📂 Upload source code files for AI analysis
+- 📖 Explain code structure and functionality
+- ⚡ Multi-threaded responses (UI remains responsive)
+- 🔧 Function-calling AI agent
+- 🌐 OpenRouter API integration
+- 🔒 Environment variable support using `.env`
 
 ---
 
-## 💻 Coding Assistance
+## 📸 Demo
+<img width="962" height="690" alt="Screenshot 2026-07-13 161546" src="https://github.com/user-attachments/assets/3604089e-a074-4b61-a1b4-1e235bb737bb" />
 
-* Generate code
-* Modify existing code
-* Explain programming concepts
-* Assist with development tasks
-* Automate repetitive coding operations
 
----
+https://github.com/user-attachments/assets/40452292-d633-4c8a-afcc-2a1c62eb2559
 
-# 🏗️ System Architecture
-
-```
-                 User Request
-                      |
-                      ↓
-              Agent Controller
-                      |
-                      ↓
-                LLM Model
-                      |
-        --------------------------------
-        |              |               |
-        ↓              ↓               ↓
-  File Tools     Code Tools      Other Tools
-        |
-        ↓
-   Project Files
-```
-
-The agent follows this workflow:
-
-```
-User Input
-     ↓
-Understand Task
-     ↓
-Plan Action
-     ↓
-Select Appropriate Tool
-     ↓
-Execute Tool
-     ↓
-Analyze Result
-     ↓
-Complete Task
-```
 
 ---
 
-# 🛠️ Tech Stack
+## 🛠️ Tech Stack
 
-## Programming Language
-
-* Python
-
-## AI Technologies
-
-* Large Language Models (LLMs)
-* AI Agents
-* Function Calling
-* Prompt Engineering
-* Structured Tool Schemas
-
-## Development Tools
-
-* Git
-* GitHub
-* Virtual Environment
+- Python
+- Tkinter
+- OpenAI Python SDK
+- OpenRouter API
+- python-dotenv
 
 ---
 
-# 📁 Project Structure
+## 📂 Project Structure
 
 ```
 CodeForgeAI/
 │
-├── agent/
-│   ├── agent.py
-│   └── prompts.py
-│
-├── tools/
-│   ├── file_tools.py
-│   └── schemas.py
-│
-├── main.py
-│
+├── interface.py          # Desktop GUI (Run this file)
+├── main.py               # AI Agent
+├── call_function.py      # Tool calling logic
+├── prompts.py            # System prompt
+├── .env                  # API key (Not uploaded)
 ├── requirements.txt
 └── README.md
 ```
 
 ---
 
-# ⚙️ Installation
+## 🚀 Installation
 
-## Clone the Repository
+Clone the repository
 
 ```bash
 git clone https://github.com/Siddarthan-A/CodeForgeAI.git
 ```
 
-## Navigate to Project Directory
+Move into the project
 
 ```bash
 cd CodeForgeAI
 ```
 
-## Create Virtual Environment
+Create a virtual environment
 
 ```bash
-python -m venv venv
+python -m venv .venv
 ```
 
-## Activate Virtual Environment
+Activate it
 
 ### Windows
 
 ```bash
-venv\Scripts\activate
+.venv\Scripts\activate
 ```
 
-### Linux / Mac
+### Linux / macOS
 
 ```bash
-source venv/bin/activate
+source .venv/bin/activate
 ```
 
-## Install Dependencies
+Install dependencies
 
 ```bash
 pip install -r requirements.txt
@@ -171,78 +96,98 @@ pip install -r requirements.txt
 
 ---
 
-# ▶️ Running the Project
+## 🔑 Environment Variables
 
-Start CodeForgeAI:
+Create a `.env` file in the project root.
+
+```
+OPENROUTER_API_KEY=your_api_key_here
+```
+
+You can obtain an API key from:
+
+https://openrouter.ai/
+
+---
+
+## ▶️ Running the Application
+
+Start the desktop application with:
 
 ```bash
-python main.py
+python interface.py
 ```
 
 ---
 
-# 💡 Example Interaction
+## 💡 How to Use
 
-```
-User:
-Create a Python program that calculates factorial.
+### Chat with the AI
 
-Agent:
-Analyzing request...
+Simply type your programming question and press **Send**.
 
-Selecting tool:
-create_file()
+Examples:
 
-Creating factorial.py...
-
-Task completed successfully.
-```
+- Explain Python decorators
+- Find the bug in this algorithm
+- Generate a REST API
+- Optimize this code
 
 ---
 
-# 🧩 How It Works
+### Upload a File
 
-1. The user provides a development task.
-2. The agent analyzes the request.
-3. The LLM decides the required action.
-4. The agent selects the appropriate tool.
-5. The tool performs the operation.
-6. The result is returned to the agent.
-7. The process continues until the task is completed.
+1. Click **Upload File**
+2. Select a source code file
+3. Ask questions such as:
 
----
-
-# 📚 Concepts Learned
-
-This project helped explore:
-
-* How AI agents work internally
-* Building tool-based AI systems
-* LLM interaction patterns
-* Function calling architecture
-* Prompt design
-* Backend system design
-* Automation using AI
+- Explain this file
+- What does this function do?
+- Can this code be optimized?
+- Find possible bugs
+- Add documentation
 
 ---
 
-# 🎯 Project Goal
+## 📈 Current Capabilities
 
-The goal of CodeForgeAI is to explore how autonomous AI agents can assist developers by combining language understanding, reasoning, and external tools.
+✔ AI Chat
 
-This project demonstrates the foundation of AI-powered developer assistants.
+✔ Code Explanation
+
+✔ File Upload
+
+✔ Function Calling
+
+✔ Multi-threading
+
+✔ Modern Desktop Interface
 
 ---
 
-# 👨‍💻 Author
+## 🔮 Future Improvements
+
+- Project Folder Analysis
+- Conversation Memory
+- Multiple File Support
+- Syntax Highlighting
+- Code Refactoring
+- AI Code Generation
+- Unit Test Generation
+- Git Integration
+- Multiple AI Model Support
+
+---
+
+## 👨‍💻 Author
 
 **Siddarthan A**
-
-B.Tech Student | Backend Development | AI Engineering
 
 GitHub:
 https://github.com/Siddarthan-A
 
 ---
 
-⭐ If you find this project interesting, consider giving it a star!
+## ⭐ Support
+
+If you found this project useful, consider giving it a ⭐ on GitHub.

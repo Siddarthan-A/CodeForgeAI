@@ -20,18 +20,11 @@ This project combines a modern AI workflow with function calling, making it more
 ---
 
 ## 📸 Demo
+<img width="962" height="690" alt="Screenshot 2026-07-13 161546" src="https://github.com/user-attachments/assets/3604089e-a074-4b61-a1b4-1e235bb737bb" />
 
-*(Add screenshots or a GIF here)*
 
-Example:
+https://github.com/user-attachments/assets/40452292-d633-4c8a-afcc-2a1c62eb2559
 
-```
-Welcome to CodeForgeAI!
-
-Your AI-powered coding assistant.
-
-Describe what you'd like to build, fix, or understand...
-```
 
 ---
 

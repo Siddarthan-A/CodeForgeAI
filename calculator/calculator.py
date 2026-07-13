@@ -8,7 +8,7 @@ class Calculator:
         self.operators: dict[str, Callable[[float, float], float]] = {
             "+": lambda a, b: a + b,
             "-": lambda a, b: a - b,  # Fixed subtraction
-            "*": lambda a, b: a + b,    # Fixed multiplication
+            "*": lambda a, b: a * b,    # Fixed multiplication
             "/": lambda a, b: a / b,
         }
         self.precedence: dict[str, int] = {

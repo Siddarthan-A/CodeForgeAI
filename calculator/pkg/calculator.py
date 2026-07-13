@@ -8,7 +8,7 @@ class Calculator:
         self.operators: dict[str, Callable[[float, float], float]] = {
             "+": lambda a, b: a + b,
             "-": lambda a, b: a - b,  # Fixed subtraction
-            "*": lambda a, b: a * b,
+            "*": lambda a, b: a * b,    # Fixed multiplication
             "/": lambda a, b: a / b,
         }
         self.precedence: dict[str, int] = {
@@ -62,3 +62,18 @@ class Calculator:
         b = values.pop()
         a = values.pop()
         values.append(self.operators[operator](a, b))
+
+if __name__ == "__main__":
+    calculator = Calculator()
+
+    while True:
+        expression = input("Enter expression (or 'exit' to quit): ")
+
+        if expression.lower() == "exit":
+            break
+
+        try:
+            result = calculator.evaluate(expression)
+            print("Result:", result)
+        except Exception as e:
+            print("Error:", e)
